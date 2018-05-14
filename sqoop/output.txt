@@ -4,5 +4,5 @@ Found 2 items
 -rw-r--r--   3 root supergroup         43 2018-05-14 13:52 /root/salida/part-m-00000
 
 [root@clouderam ~]# HADOOP_USER_NAME=hdfs hdfs dfs -cat /root/salida/part-m-00000 
-5.14.3,clouderam.ricohits.ga/172.21.14.108 <br>
+5.14.3,clouderam.ricohits.ga/172.21.14.108 
 
