@@ -1,0 +1,90 @@
+#[root@clouderam flumee]# HADOOP_USER_NAME=hdfs hdfs dfs -ls -R /flume/Salida
+drwxr-xr-x   - root supergroup          0 2018-05-15 09:13 /flume/Salida/201805150912
+-rw-r--r--   3 root supergroup       1520 2018-05-15 09:12 /flume/Salida/201805150912/FlumeData.1526400752311
+-rw-r--r--   3 root supergroup       1520 2018-05-15 09:12 /flume/Salida/201805150912/FlumeData.1526400752312
+-rw-r--r--   3 root supergroup       1520 2018-05-15 09:12 /flume/Salida/201805150912/FlumeData.1526400752313
+-rw-r--r--   3 root supergroup       1140 2018-05-15 09:13 /flume/Salida/201805150912/FlumeData.1526400752314
+drwxr-xr-x   - root supergroup          0 2018-05-15 09:14 /flume/Salida/201805150913
+-rw-r--r--   3 root supergroup       1520 2018-05-15 09:13 /flume/Salida/201805150913/FlumeData.1526400781321
+-rw-r--r--   3 root supergroup       1520 2018-05-15 09:13 /flume/Salida/201805150913/FlumeData.1526400781322
+-rw-r--r--   3 root supergroup       1520 2018-05-15 09:13 /flume/Salida/201805150913/FlumeData.1526400781323
+-rw-r--r--   3 root supergroup       1520 2018-05-15 09:13 /flume/Salida/201805150913/FlumeData.1526400781324
+-rw-r--r--   3 root supergroup       1520 2018-05-15 09:13 /flume/Salida/201805150913/FlumeData.1526400781325
+-rw-r--r--   3 root supergroup       1520 2018-05-15 09:13 /flume/Salida/201805150913/FlumeData.1526400781326
+-rw-r--r--   3 root supergroup       1520 2018-05-15 09:13 /flume/Salida/201805150913/FlumeData.1526400781327
+-rw-r--r--   3 root supergroup        570 2018-05-15 09:14 /flume/Salida/201805150913/FlumeData.1526400781328
+drwxr-xr-x   - root supergroup          0 2018-05-15 09:15 /flume/Salida/201805150914
+-rw-r--r--   3 root supergroup       1520 2018-05-15 09:14 /flume/Salida/201805150914/FlumeData.1526400841340
+-rw-r--r--   3 root supergroup       1520 2018-05-15 09:14 /flume/Salida/201805150914/FlumeData.1526400841341
+-rw-r--r--   3 root supergroup       1520 2018-05-15 09:14 /flume/Salida/201805150914/FlumeData.1526400841342
+-rw-r--r--   3 root supergroup       1520 2018-05-15 09:14 /flume/Salida/201805150914/FlumeData.1526400841343
+-rw-r--r--   3 root supergroup       1520 2018-05-15 09:14 /flume/Salida/201805150914/FlumeData.1526400841344
+-rw-r--r--   3 root supergroup       1520 2018-05-15 09:14 /flume/Salida/201805150914/FlumeData.1526400841345
+-rw-r--r--   3 root supergroup       1520 2018-05-15 09:14 /flume/Salida/201805150914/FlumeData.1526400841346
+-rw-r--r--   3 root supergroup        570 2018-05-15 09:15 /flume/Salida/201805150914/FlumeData.1526400841347
+drwxr-xr-x   - root supergroup          0 2018-05-15 09:16 /flume/Salida/201805150915
+-rw-r--r--   3 root supergroup       1520 2018-05-15 09:15 /flume/Salida/201805150915/FlumeData.1526400901358
+-rw-r--r--   3 root supergroup       1520 2018-05-15 09:15 /flume/Salida/201805150915/FlumeData.1526400901359
+-rw-r--r--   3 root supergroup       1520 2018-05-15 09:15 /flume/Salida/201805150915/FlumeData.1526400901360
+-rw-r--r--   3 root supergroup       1520 2018-05-15 09:15 /flume/Salida/201805150915/FlumeData.1526400901361
+-rw-r--r--   3 root supergroup       1520 2018-05-15 09:15 /flume/Salida/201805150915/FlumeData.1526400901362
+-rw-r--r--   3 root supergroup       1520 2018-05-15 09:15 /flume/Salida/201805150915/FlumeData.1526400901363
+-rw-r--r--   3 root supergroup       1520 2018-05-15 09:15 /flume/Salida/201805150915/FlumeData.1526400901364
+-rw-r--r--   3 root supergroup        760 2018-05-15 09:16 /flume/Salida/201805150915/FlumeData.1526400901365
+drwxr-xr-x   - root supergroup          0 2018-05-15 09:17 /flume/Salida/201805150916
+-rw-r--r--   3 root supergroup       1520 2018-05-15 09:16 /flume/Salida/201805150916/FlumeData.1526400961375
+-rw-r--r--   3 root supergroup       1520 2018-05-15 09:16 /flume/Salida/201805150916/FlumeData.1526400961376
+-rw-r--r--   3 root supergroup       1520 2018-05-15 09:16 /flume/Salida/201805150916/FlumeData.1526400961377
+-rw-r--r--   3 root supergroup       1520 2018-05-15 09:16 /flume/Salida/201805150916/FlumeData.1526400961378
+-rw-r--r--   3 root supergroup       1520 2018-05-15 09:16 /flume/Salida/201805150916/FlumeData.1526400961379
+-rw-r--r--   3 root supergroup       1520 2018-05-15 09:16 /flume/Salida/201805150916/FlumeData.1526400961380
+-rw-r--r--   3 root supergroup       1520 2018-05-15 09:16 /flume/Salida/201805150916/FlumeData.1526400961381
+-rw-r--r--   3 root supergroup        570 2018-05-15 09:17 /flume/Salida/201805150916/FlumeData.1526400961382
+drwxr-xr-x   - root supergroup          0 2018-05-15 09:17 /flume/Salida/201805150917
+-rw-r--r--   3 root supergroup        950 2018-05-15 09:17 /flume/Salida/201805150917/FlumeData.1526401021394
+
+
+
+
+
+#[root@clouderam flumee]# HADOOP_USER_NAME=hdfs hdfs dfs -cat /flume/Salida/201805150916/FlumeData.1526400961375
+hello world goodbye world hello again
+this is a test it does not work hello
+hello world goodbye world hello again
+this is a test it does not work hello
+hello world goodbye world hello again
+this is a test it does not work hello
+hello world goodbye world hello again
+this is a test it does not work hello
+hello world goodbye world hello again
+this is a test it does not work hello
+hello world goodbye world hello again
+this is a test it does not work hello
+hello world goodbye world hello again
+this is a test it does not work hello
+hello world goodbye world hello again
+this is a test it does not work hello
+hello world goodbye world hello again
+hello world goodbye world hello again
+hello world goodbye world hello again
+hello world goodbye world hello again
+this is a test it does not work hello
+hello world goodbye world hello again
+this is a test it does not work hello
+hello world goodbye world hello again
+this is a test it does not work hello
+hello world goodbye world hello again
+this is a test it does not work hello
+this is a test it does not work hello
+hello world goodbye world hello again
+this is a test it does not work hello
+hello world goodbye world hello again
+this is a test it does not work hello
+hello world goodbye world hello again
+this is a test it does not work hello
+this is a test it does not work hello
+hello world goodbye world hello again
+this is a test it does not work hello
+hello world goodbye world hello again
+this is a test it does not work hello
+hello world goodbye world hello again
