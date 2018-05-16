@@ -60,7 +60,7 @@ object SPARK{
       println(s"r2: ${trainingSummary.r2}")
       /* RESULTS */
       println("********************************* \n"*10)
-      println("predicted_house_price = intercept +"+lrModel.coefficients(0)+" x num_of_rooms +"+lrModel.coefficients(1)+"x num_of_baths +"+lrModel.coefficients(2)+" x size_of_house +"+lrModel.coefficients(3)+"  x one_if_pool_zero_otherwise"  )
+      println("predicted_house_price = "+lrModel.intercept+"  +"+lrModel.coefficients(0)+" x num_of_rooms +"+lrModel.coefficients(1)+"x num_of_baths +"+lrModel.coefficients(2)+" x size_of_house +"+lrModel.coefficients(3)+"  x one_if_pool_zero_otherwise"  )
 
     }
 
