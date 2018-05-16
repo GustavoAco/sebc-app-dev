@@ -1,0 +1,7 @@
+[root@clouderan2 spark]# HADOOP_USER_NAME=hdfs hdfs dfs -cat /user/admin/input1505SPARK/part-00000
+(a,1)
+(b,2)
+(c,3)
+(x,5)
+(y,2)
+(z,3)
