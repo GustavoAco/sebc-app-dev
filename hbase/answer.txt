@@ -1,0 +1,14 @@
+key:no_sitio+no_secuencial
+CF:no_sitio
+   correo
+   timestamp
+
+Rigion->no_sitio
+
+key:correo+timestamp
+CF:DATA
+   correo
+   timestamp
+   dominio
+   ip	
+	
