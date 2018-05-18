@@ -1,0 +1,113 @@
+import org.apache.spark.{ SparkConf, SparkContext }
+import org.apache.hadoop.conf.Configuration
+import org.apache.hadoop.fs.{ FileSystem, Path }
+import org.apache.spark.rdd.RDD
+import org.apache.log4j.{ Level, Logger }
+//import org.apache.spark.sql.{row,SparkSession}
+import org.apache.spark.sql.SparkSession
+import org.apache.spark.streaming.StreamingContext
+import org.apache.spark.streaming.Seconds
+import org.apache.spark.streaming.flume.FlumeUtils
+import org.apache.hadoop.hbase.client._
+import org.apache.hadoop.hbase.util.Bytes
+import org.apache.hadoop.hbase.{CellUtil, HBaseConfiguration, TableName}
+import org.apache.hadoop.conf.Configuration
+
+//import org.apache.hadoop.hbase.{CellUtil, HBaseConfiguration, TableName}
+object Blaher {
+  def blah(row: Array[String]) { 
+    val hConf = new HBaseConfiguration() 
+    val hTable = new HTable(hConf, "table") 
+    val thePut = new Put(Bytes.toBytes(row(0))) 
+    thePut.add(Bytes.toBytes("cf"), Bytes.toBytes(row(0)), Bytes.toBytes(row(0))) 
+    hTable.put(thePut) 
+  } 
+}
+
+
+object SPARK {
+  lazy val logger = Logger.getLogger(this.getClass.getName)
+
+  def main(args: Array[String]): Unit = {
+    if (args.length < 2) {
+      System.err.println("Usage: SparkStreamExample <host> <port>")
+      System.exit(1)
+    }
+
+    val host = args(0)
+    val port = args(1).toInt
+
+    val conf = new SparkConf()
+      .setAppName("Spark Stream Example")
+      //          .setMaster("local[2]")
+      .set("spark.io.compression.codec", "lz4")
+
+    val sc = new SparkContext(conf)
+    val conf2 : Configuration = HBaseConfiguration.create()
+    val ZOOKEEPER_QUORUM = "WRITE THE ZOOKEEPER CLUSTER THAT HBASE SHOULD USE"
+  conf.set("hbase.zookeeper.quorum", ZOOKEEPER_QUORUM);
+
+  val connection = ConnectionFactory.createConnection(conf2)
+  val table = connection.getTable(TableName.valueOf( Bytes.toBytes("prueba") ) )
+
+    Logger.getRootLogger.setLevel(Level.WARN)
+
+    /* READ STREAM FROM FLUME AND PRINT COUNTS */
+
+   
+    val ssc = new StreamingContext(sc, Seconds(5))
+    val Stream = FlumeUtils.createStream(ssc, host, port)
+
+    val line = Stream.map { e =>  (new String(e.event.getBody().array())) }
+
+    val words = line.flatMap(lines => lines.split(" "))
+                .filter(w => (w =="hello") || (w == "word") || (w == "goodbye") || (w =="again") || (w =="test") || (w =="does") || (w =="not") || (w =="work") )
+    val pairs = words.map(word => (word, 1))
+
+
+    //val set = Set("a","is","the","this")
+    val counts = pairs.reduceByKey(_ + _)
+
+    counts.foreachRDD{
+      rdd => {
+    val thePut = new Put(Bytes.toBytes("prueba") 
+    thePut.add(Bytes.toBytes("cf"), Bytes.toBytes(rdd.map(x._2)), Bytes.toBytes(rdd.map(x._1))) 
+    table.put(thePut)
+      }
+
+    }
+
+    /*
+    val thePut = new Put(Bytes.toBytes(counts(0))) 
+    thePut.add(Bytes.toBytes("cf"), Bytes.toBytes(counts(0)), Bytes.toBytes(counts(0))) 
+    table.put(thePut)
+    
+    counts.foreachRDD { rdd =>
+  rdd.foreachPartition(iter => {
+
+    iter.foreach(record => {
+        val i = +1
+        val thePut = new Put(Bytes.toBytes(i)) 
+        thePut.add(Bytes.toBytes("words"), Bytes.toBytes(record.toBytes) 
+
+        //missing part in your code
+        table.put(thePut);
+      })
+    }
+  )}
+    /*  var put = new Put(Bytes.toBytes("llave-demo"))
+  put.addColumn(Bytes.toBytes("d"), Bytes.toBytes("palabra"), Bytes.toBytes("test_value"))
+  put.addColumn(Bytes.toBytes("d"), Bytes.toBytes("numero"), Bytes.toBytes("test_value2"))
+  table.put(put)*/
+    //conuts.toHBase("prueba", "word")
+
+
+*/
+    counts.print()
+
+    /* DON'T FORGET TO START THE STREAM SESSION */
+    ssc.start()
+    ssc.awaitTermination()
+
+  }
+}
