@@ -1,0 +1,13 @@
+--connect
+"jdbc:mysql://localhost/scm"
+--username
+root
+--password
+"Korn5636"
+--query 'select * from demo where x >0 and x<1000'
+-m
+1
+--target-dir
+/root/salida
+
+ 
